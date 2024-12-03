@@ -44,7 +44,7 @@ when()mul(384,519:what()who(675,184)^-&>&@mul(672,770) /#]~<[mul(193,471)where()
 (define (part2 input)
   (define instructions (regexp-match* mul-and-do-pattern input #:match-select cdr))
   (define start-state (list 0 #t))
-  (foldl exec start-state instructions))
+  (car (foldl exec start-state instructions)))
 
 
 (displayln "Part 2")
