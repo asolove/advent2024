@@ -35,7 +35,7 @@ when()mul(384,519:what()who(675,184)^-&>&@mul(672,770) /#]~<[mul(193,471)where()
 (define test-input2 "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))")
 (define mul-and-do-pattern #px"mul\\((\\d+),(\\d+)\\)|(do)\\(\\)|(don\\'t)\\(\\)")
 
-(define/match (exec state instruction)
+(define/match (exec instruction state)
   [((list n m #f #f) (list sum #t)) (list (+ sum (* (string->number m) (string->number n))) #t)]
   [((list n m #f #f) (list sum #f)) (list sum #f)]
   [((list n m #f _dont) (list sum _s)) (list sum #f)]
